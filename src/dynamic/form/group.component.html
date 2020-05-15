@@ -1,0 +1,64 @@
+<div [ngClass]="column.class.label" *ngIf="column.label!==undefined">
+  <label [attr.for]="column.key" class="col-form-label">{{column.label}}</label>
+</div>
+<div
+  [ngSwitch]="column.controlType"
+  [ngClass]="column.class.group"
+  [formGroup]="form"
+>
+  <input
+    *ngSwitchCase="controlType.input"
+    [name]="column.key"
+    [id]="column.key"
+    [type]="column.type"
+    [readonly]="column.readonly"
+    [value]="column.value"
+    [placeholder]="column.placeholder"
+    [ngClass]="column.class[column.controlType]"
+    [formControlName]="column.key"
+  />
+  <button
+    *ngSwitchCase="controlType.button"
+    [name]="column.key"
+    [id]="column.key"
+    [type]="column.type"
+    [value]="column.value"
+    [ngClass]="column.class[column.controlType]"
+  >
+    {{column.value}}
+  </button>
+  <select
+    id="column.key"
+    *ngSwitchCase="controlType.dropdown"
+    [name]="column.key"
+    [ngClass]="column.class[column.controlType]"
+    [formControlName]="column.key"
+  >
+    <option *ngFor="let opt of column.options" [value]="opt.value"
+      >{{opt.display}}</option
+    >
+  </select>
+  <div
+    *ngSwitchCase="controlType.caption"
+    [ngClass]="column.class[column.controlType]"
+  >
+    {{column.value}}
+  </div>
+  <div
+    *ngSwitchCase="controlType.radio"
+    [ngClass]="column.class[column.controlType]"
+  >
+    <div class="form-check" *ngFor="let opt of column.options">
+      <input
+        class="form-check-input"
+        type="radio"
+        [name]="column.key"
+        [value]="opt.value"
+        [id]="opt.value"
+        [checked]="opt.value==column.value"
+        [formControlName]="column.key"
+      />
+      <label [for]="opt.value" class="form-check-label">{{opt.display}}</label>
+    </div>
+  </div>
+</div>

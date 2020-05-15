@@ -1,0 +1,16 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" class="form" [formGroup]="form">
+    <div
+      *ngFor="let d of data"
+      [ngClass]="d.class.base"
+      [style]="d.style.base"
+      [form]="form"
+      [data]="d"
+      dynamic-layout-dom
+    ></div>
+  </form>
+  <!-- <pre>{{form.value | json}}</pre> -->
+  <div *ngIf="payLoad">
+    <strong>Saved the following values</strong><br />{{payLoad}}
+  </div>
+</div>
