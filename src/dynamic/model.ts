@@ -18,7 +18,7 @@ export class DynamicModel<T> {
       style?: DynamicStyle;
     } = {}
   ) {
-    this.value = options.value === undefined ? "" : options.value;
+    this.value = options.value;// === undefined ? "" : options.value;
     this.type = options.type === undefined ? "" : options.type;
     this.controlType =
       options.controlType === undefined ? "" : options.controlType;

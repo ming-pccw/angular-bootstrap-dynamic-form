@@ -1,4 +1,4 @@
-<div [ngClass]="column.class.label" *ngIf="column.label!==undefined">
+<div [ngClass]="column.class.label" *ngIf="column.hasOwnProperty('label')">
   <label [attr.for]="column.key" class="col-form-label">{{column.label}}</label>
 </div>
 <div

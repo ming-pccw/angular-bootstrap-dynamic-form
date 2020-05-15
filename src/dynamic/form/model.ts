@@ -21,7 +21,7 @@ export class DynamicFormModel<T> extends DynamicModel<T> {
     } = {}
   ) {
     super(options);
-    this.value = options.value === undefined ? "" : options.value;
+    this.value = options.value;// === undefined ? "" : options.value;
     this.key = options.key || "";
     this.label = options.label === "" ? undefined : options.label;
     this.required = !!options.required;

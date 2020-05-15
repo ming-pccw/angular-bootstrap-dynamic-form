@@ -18,7 +18,7 @@ export class DynamicLayoutModel<T> extends DynamicModel<T> {
     } = {}
   ) {
     super(options);
-    this.value = options.value === undefined ? "" : options.value;
+    this.value = options.value;// === undefined ? "" : options.value;
     this.layouts = options.layouts === undefined ? [] : options.layouts;
     this.columns = options.columns === undefined ? [] : options.columns;
     this.class = options.class === undefined ? [] : options.class;

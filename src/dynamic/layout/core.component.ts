@@ -8,7 +8,7 @@ import { DynamicFormControlService } from "../form/control.service";
 import { Observable } from "rxjs";
 
 import { DynamicFromDropdown } from "../form/dropdown";
-import { DynamicFromTextbox } from "../form/textbox";
+import { DynamicFromInput } from "../form/input";
 import { DynamicFormGroupComponent } from "../form/group.component";
 import { DynamicLayoutDomComponent } from "../layout/dom.component";
 
