@@ -1,5 +1,14 @@
-<div [ngClass]="column.class.label" *ngIf="column.label!==undefined">
-  <label [attr.for]="column.key" class="col-form-label">{{column.label}}</label>
+<div
+  [ngClass]="column.class.label_container"
+  *ngIf="column.class.label_after_input!==true"
+>
+  <label
+    [attr.for]="column.key"
+    [ngClass]="column.class.label"
+    *ngIf="column.hasOwnProperty('label')"
+    >{{column.label}}</label
+  >
+  <!-- <pre>{{column.class|json}}</pre> -->
 </div>
 <div
   [ngSwitch]="column.controlType"
@@ -61,4 +70,15 @@
       <label [for]="opt.value" class="form-check-label">{{opt.display}}</label>
     </div>
   </div>
+</div>
+<div
+  [ngClass]="column.class.label_container"
+  *ngIf="column.class.label_after_input===true"
+>
+  <label
+    [attr.for]="column.key"
+    [ngClass]="column.class.label"
+    *ngIf="column.hasOwnProperty('label')"
+    >{{column.label}}</label
+  >
 </div>

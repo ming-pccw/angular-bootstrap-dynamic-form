@@ -2,14 +2,14 @@ import { Injectable } from "@angular/core";
 
 import { DynamicFromDropdown } from "../dynamic/form/dropdown";
 import { DynamicFromInput } from "../dynamic/form/input";
-import { DynamicFormModel } from "../dynamic/form/model";
+//import { DynamicFormModel } from "../dynamic/form/model";
 import { DynamicFormButton } from "../dynamic/form/button";
 import { DynamicLayoutModel } from "../dynamic/layout/model";
 import { DynamicFromCaption } from "../dynamic/form/caption";
-import { DynamicModel } from "../dynamic/model";
+//import { DynamicModel } from "../dynamic/model";
 import { DynamicClass } from "../dynamic/class";
 import { of } from "rxjs";
-import { DynamicControlType } from "../dynamic/controltype";
+//import { DynamicControlType } from "../dynamic/controltype";
 import { DynamicFormRadio } from "../dynamic/form/radio";
 
 @Injectable()
@@ -139,7 +139,7 @@ export class TestService {
           new DynamicFromInput({
             class: new DynamicClass({
               base: "row",
-              label: "col-md-5",
+              label_container: "col-md-5",
               group: "col-md-7"
             }),
             key: "numberF",
@@ -163,7 +163,7 @@ export class TestService {
           new DynamicFromCaption({
             label: "Dynamic From Label With Class",
             class: new DynamicClass({
-              label: "h2"
+              label_container: "h2"
             }),
             value: "Dynamic From Caption"
           })
@@ -204,14 +204,105 @@ export class TestService {
           new DynamicFromInput({
             class: new DynamicClass({
               base: "row",
-              label: "col-md-5",
-              group: "col-md-7"
+              label_container: "col-md-5",
+              group: "col-md-7",
+              label_after_input: true
             }),
             key: "emailAddres23s",
-            label: "one line input email ",
+            label: "one line input email, label after input box",
             type: "email",
-            required: true,
-            order: 2
+            required: true
+          })
+        ]
+      }),
+      new DynamicLayoutModel({
+        class: new DynamicClass({
+          base: "border-top my-3"
+        })
+      }),
+      new DynamicLayoutModel({
+        class: new DynamicClass({
+          base: "row alert alert-danger"
+        }),
+        columns: [
+          new DynamicFromCaption({
+            label: "checkbox",
+            value: "css with form-group mb-0 ml-2 d-inline-block",
+            class: new DynamicClass({
+              label: "h4",
+              group: ""
+            })
+          })
+        ]
+      }),
+      new DynamicLayoutModel({
+        class: new DynamicClass({
+          base: "col-12"
+        }),
+        columns: [
+          new DynamicFromInput({
+            class: new DynamicClass({
+              base: "form-check",
+              input: "form-check-input",
+              label_container: "form-check-label",
+              label: "",
+              label_after_input: true
+            }),
+            key: "checkbox1",
+            label: "checkbox ",
+            type: "checkbox",
+            value: "checkme",
+            required: true
+          })
+        ]
+      }),
+      new DynamicLayoutModel({
+        class: new DynamicClass({
+          base: "row"
+        }),
+        columns: [
+          new DynamicFromInput({
+            class: new DynamicClass({
+              base: "form-check col-4",
+              group: "form-group mb-0 ",
+              input: "form-check-input",
+              label_container: "form-check-label",
+              label: "",
+              label_after_input: true
+            }),
+            key: "checkbox2a",
+            label: "checkbox 2a",
+            type: "checkbox",
+            value: "checkme",
+            required: true
+          }),
+          new DynamicFromInput({
+            class: new DynamicClass({
+              base: "form-check col-4",
+              group: "form-group mb-0 ml-2 d-inline-block",
+              input: "d-inline-block",
+              label_container: "form-check-label d-inline-block",
+              label: ""
+            }),
+            key: "checkbox2b",
+            label: "checkbox 2b",
+            type: "checkbox",
+            value: "checkme",
+            required: true
+          }),
+          new DynamicFromInput({
+            class: new DynamicClass({
+              base: "form-check col-4",
+              group: "form-group mb-0 ml-2 d-inline-block",
+              input: "d-inline-block",
+              label_container: "form-check-label d-inline-block",
+              label: ""
+            }),
+            key: "checkbox2c",
+            label: "checkbox 2c",
+            type: "checkbox",
+            value: "checkme",
+            required: true
           })
         ]
       }),
@@ -236,24 +327,10 @@ export class TestService {
         ]
       })
     ];
-
-    //console.log(JSON.stringify(data));
-    // let b: DynamicLayoutModel<string>[] = [
-    //   new DynamicLayoutModel({
-    //     class: new DynamicClass({
-    //       base: "row"
-    //     }),
-    //     style: "border:solid 1px;min-height: 20px",
-    //     layouts: [
-    //       new DynamicLayoutModel({
-    //         class: new DynamicClass({
-    //           base: "col-5"
-    //         }),
-    //         columns: columns2
-    //       })
-    //     ]
-    //   })
-    // ];
+    console.log("INPUT JSON TO STATIC FORM, SAMPLE @ app/test.service.ts:");
+    console.log("START >>>>>>>>>>>>>>>>>>>>>>>>");
+    console.log(JSON.stringify(data));
+    console.log("<<<<<<<<<<<<<<<<<<<<<<<<< END");
     return of(data);
   }
 }

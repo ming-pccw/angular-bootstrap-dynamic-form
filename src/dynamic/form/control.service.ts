@@ -2,14 +2,14 @@ import { Injectable } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { DynamicLayoutModel } from "../layout/model";
-import { DynamicFormModel } from "./model";
+//import { DynamicFormModel } from "./model";
 
 @Injectable()
 export class DynamicFormControlService {
   group = {};
   toFormGroup(data: DynamicLayoutModel<string>[]) {
     this.recursiveFormGroup(data);
-    console.log(this.group);
+    //console.log(this.group);
     return new FormGroup(this.group);
   }
 

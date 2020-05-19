@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
-import { FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { FormGroup } from "@angular/forms";
 
-import { DynamicFormModel } from "../form/model";
+//import { DynamicFormModel } from "../form/model";
 import { DynamicLayoutModel } from "./model";
 
 @Component({
@@ -12,6 +12,6 @@ export class DynamicLayoutDomComponent {
   @Input() data: DynamicLayoutModel<string>;
   @Input() form: FormGroup;
   ngOnInit() {
-    console.log("dom", this.form);
+    //console.log("dom", this.form);
   }
 }

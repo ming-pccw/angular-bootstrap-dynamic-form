@@ -4,8 +4,8 @@ import { TestService } from "./test.service";
 import { Observable } from "rxjs";
 
 import { DynamicLayoutModel } from "../dynamic/layout/model";
-import { DynamicLayoutCoreComponent } from "../dynamic/layout/core.component";
-import { Test2Service } from "./test2.service";
+//import { DynamicLayoutCoreComponent } from "../dynamic/layout/core.component";
+
 @Component({
   selector: "app-root",
   template: `

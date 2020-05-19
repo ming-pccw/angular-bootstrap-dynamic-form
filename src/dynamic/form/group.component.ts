@@ -15,7 +15,7 @@ export class DynamicFormGroupComponent {
   controlType: object = DynamicControlType;
 
   ngOnInit() {
-    console.log("Group", this.form);
+    //console.log("Group", this.form);
   }
 
   //get isValid() {
